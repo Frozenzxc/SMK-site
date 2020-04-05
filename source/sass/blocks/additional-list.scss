@@ -1,0 +1,35 @@
+.additional-list {
+  @include list-reset;
+  font-size: 19px;
+  line-height: 23px;
+  color: $white;
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  top: 50px;
+  right: 15px;
+  width: 50%;
+  text-transform: lowercase;
+  z-index: 2;
+  background-color: $black;
+}
+
+.additional-list__item {
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+  }
+
+  &:active {
+    color: rgba(0, 0, 0, 0.3);
+  }
+}
+
+.additional-list__link {
+  text-align: center;
+  display: block;
+  padding: 20px 10px;
+  color: inherit;
+}

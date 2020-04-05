@@ -1,0 +1,41 @@
+.page-header {
+  background-color: $white;
+}
+
+.page-header__wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.page-header__logo {
+  display: block;
+  margin-top: 22px;
+  margin-bottom: 22px;
+  cursor: pointer;
+  text-align: center;
+  width: 166px;
+  height: 39px;
+
+  &:focus,
+  &:hover {
+    opacity: 0.6;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+}
+
+.page-header__title {
+  margin: 0;
+  margin-left: 30px;
+  width: 10%;
+  font: inherit;
+  font-size: 15px;
+  line-height: 23px;
+}
+
+.page-header__nav {
+  margin-left: auto;
+}

@@ -1,0 +1,54 @@
+.button {
+  position: relative;
+  display: block;
+  padding: 14px 24px;
+  background-color: $black;
+  font-size: 19px;
+  line-height: 15px;
+  color: $white;
+  text-transform: lowercase;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: $white;
+    color: $black;
+  }
+}
+
+.button--arrow {
+  padding-right: 48px;
+
+  &::before {
+    @include pseudo;
+    top: 21px;
+    right: 25px;
+    width: 17px;
+    height: 2px;
+    background: $white;
+  }
+
+  &::after {
+    @include pseudo;
+    top: 17px;
+    right: 25px;
+    width: 10px;
+    height: 10px;
+    border: 2px solid $white;
+    border-top: none;
+    border-left: none;
+    transform: rotate(-45deg);
+  }
+}
+
+.button--arrow:hover::before,
+.button--arrow:focus::before,
+.button--arrow:active::before {
+  background-color: $black;
+}
+
+.button--arrow:hover::after,
+.button--arrow:focus::after,
+.button--arrow:active::after {
+  border-color: $black;
+}

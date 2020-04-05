@@ -1,0 +1,32 @@
+
+
+
+
+
+.social {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  padding-bottom: 18px;
+  padding-right: 36px;
+  padding-left: 32px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around; }
+
+.social__link {
+  display: block; }
+
+.social__icon {
+  fill: #231f20; }
+  .social__icon:hover, .social__icon:focus {
+    fill: #63d1bb; }
+  .social__icon:active {
+    fill: #63d1bb;
+    opacity: 0.3; }
+
+
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,37 @@
+.page-footer {
+  background-color: $black;
+}
+
+.page-footer__wrapper {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $black;
+}
+
+.page-footer__logo {
+  display: block;
+  margin-top: 22px;
+  margin-bottom: 22px;
+  cursor: pointer;
+  text-align: center;
+  width: 166px;
+  height: 39px;
+
+  &:focus,
+  &:hover {
+    opacity: 0.6;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+}
+
+.page-footer__copyright {
+  padding: 14px 40px 0 40px;
+}
+

@@ -1,0 +1,31 @@
+.social {
+  @include list-reset;
+  display: flex;
+  justify-content: space-around;
+}
+
+.social__item {
+  margin-left: 30px;
+}
+
+.social__item:first-child {
+  margin-left: auto;
+}
+
+.social__link {
+  display: block;
+}
+
+.social__icon {
+  fill: #fd3131;
+
+  &:hover,
+  &:focus {
+    fill: $white;
+  }
+
+  &:active {
+    fill: $white;
+    opacity: 0.3;
+  }
+}

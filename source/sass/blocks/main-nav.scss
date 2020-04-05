@@ -1,0 +1,102 @@
+.main-nav {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  padding-right: 90px;
+}
+
+.main-nav__toggle {
+  display: none;
+}
+
+.main-nav__toggle,
+.main-nav__toggle-trigger,
+.main-nav__toggle-burger {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 17px;
+  right: 17px;
+  transition: 0.2s ease;
+  cursor: pointer;
+  z-index: 1;
+}
+
+
+.main-nav__toggle-burger {
+  top: 29px;
+  right: 28px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: $black;
+  box-shadow: -12px 0 $black,
+    12px 0 $black,
+    12px 12px $black,
+    -12px -12px $black,
+    12px -12px $black,
+    -12px 12px $black;
+
+  &::before {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: $black;
+    content: "";
+    top: -12px;
+    left: 0;
+  }
+
+  &::after {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: $black;
+    content: "";
+    top: 12px;
+    left: 0;
+  }
+}
+
+
+.main-nav__toggle:checked + .main-nav__toggle-trigger + .main-nav__toggle-burger {
+  transform: rotate(180deg);
+  box-shadow:
+    12px 12px $black,
+    -12px -12px $black,
+    12px -12px $black,
+    -12px 12px $black;
+  transition: transform 0.2s ease;
+}
+
+.main-nav__toggle:checked + .main-nav__toggle-trigger + .main-nav__toggle-burger::before {
+  transform: rotate(45deg) translateX(-5px);
+  display: none;
+  transition: transform 0.2s ease;
+}
+
+.main-nav__toggle:checked + .main-nav__toggle-trigger + .main-nav__toggle-burger::after {
+  transform: rotate(-45deg) translateX(-5px);
+  display: none;
+  transition: transform 0.2s ease;
+}
+
+.main-nav__additional-list {
+  display: none;
+  animation: not-checked-anim 1s both;
+  transition: 0.2s;
+}
+
+.main-nav__toggle:checked + .main-nav__toggle-trigger + .main-nav__toggle-burger + .main-nav__additional-list {
+  animation: checked-anim 1s ease both;
+}
+
+.main-nav__toggle:checked + .main-nav__toggle-trigger ~ .main-nav__additional-list {
+  display: block;
+}
+
+.main-nav__list {
+  margin-left: 150px;
+}

@@ -1,0 +1,27 @@
+.site-list {
+  @include list-reset;
+
+  display: flex;
+  font-size: 19px;
+  line-height: 23px;
+  text-transform: lowercase;
+}
+
+.site-list__item {
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+  }
+
+  &:active {
+    color: rgba(0, 0, 0, 0.3);
+  }
+}
+
+.site-list__link {
+  display: block;
+  padding: 20px 10px;
+  color: inherit;
+}
