@@ -8,13 +8,13 @@ body {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  font-family: "Stolzl", "Arial", sans-serif;
+  font-family: "Montserrat", "Arial", sans-serif;
   font-weight: 300;
   font-style: normal;
-  font-size: 14px;
-  line-height: 16px;
-  color: $black;
-  background-color: $white;
+  font-size: 16px;
+  line-height: 24px;
+  color: $white;
+  background-color: $black;
 }
 
 a {
@@ -35,8 +35,8 @@ img {
 }
 
 .container {
-  width: 1400px;
+  width: 375px;
   margin: 0 auto;
-  padding-left: 120px;
-  padding-right: 120px;
+  padding-left: 26px;
+  padding-right: 26px;
 }

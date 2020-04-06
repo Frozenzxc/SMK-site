@@ -1,0 +1,52 @@
+.nav-wrapper {
+  display: flex;
+  width: 78px;
+  justify-content: space-between;
+}
+
+.nav-button {
+  position: relative;
+  display: block;
+  width: 30px;
+  height: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  font-size: 0;
+  cursor: pointer;
+  background-color: transparent;
+
+  &:hover,
+  &:focus {
+    border: 1px solid rgba(255, 255, 255, 0.8);;
+  }
+
+  &:active {
+    border: 1px solid rgba(255, 255, 255, 1);;
+  }
+}
+
+.nav-button--prev::before {
+  @include pseudo;
+
+  top: calc(50% - 4px);
+  left: calc(50% - 3px);
+  width: 8px;
+  height: 8px;
+  border: 2px solid $white;
+  transform: rotate(45deg);
+  border-top: none;
+  border-right: none;
+}
+
+.nav-button--next::before {
+  @include pseudo;
+
+  top: calc(50% - 4px);
+  left: calc(50% - 5px);
+  width: 8px;
+  height: 8px;
+  border: 2px solid $white;
+  transform: rotate(45deg);
+  border-bottom: none;
+  border-left: none;
+}

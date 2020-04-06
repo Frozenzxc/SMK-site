@@ -1,27 +1,31 @@
 .site-list {
   @include list-reset;
 
-  display: flex;
-  font-size: 19px;
-  line-height: 23px;
-  text-transform: lowercase;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  font-size: 16px;
+  line-height: 28px;
+  color: rgba(255, 255, 255, 0.4);
 }
 
 .site-list__item {
   cursor: pointer;
+  padding: 10px;
+  padding-bottom: 5px;
 
   &:hover,
-  &:focus {
-    text-decoration: underline;
-  }
-
+  &:focus,
   &:active {
-    color: rgba(0, 0, 0, 0.3);
+    color: $white;
+    padding-bottom: 4px;
+    border-bottom: 1px solid $red;
   }
 }
 
 .site-list__link {
+  text-align: center;
   display: block;
-  padding: 20px 10px;
   color: inherit;
 }

@@ -1,5 +1,7 @@
 .social {
   @include list-reset;
+
+  position: absolute;
   display: flex;
   justify-content: space-around;
 }
@@ -17,15 +19,15 @@
 }
 
 .social__icon {
-  fill: #fd3131;
+  fill: $white;
 
   &:hover,
   &:focus {
-    fill: $white;
+    fill: $red;
   }
 
   &:active {
-    fill: $white;
+    fill: $red;
     opacity: 0.3;
   }
 }

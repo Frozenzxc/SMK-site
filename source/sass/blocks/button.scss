@@ -1,54 +1,19 @@
 .button {
   position: relative;
   display: block;
-  padding: 14px 24px;
-  background-color: $black;
-  font-size: 19px;
-  line-height: 15px;
+  padding: 9px 24px;
+  border: none;
+  background: linear-gradient(322.99deg, #f56e39 15.49%, #ff794e 75.81%);
+  font-size: 16px;
+  line-height: 28px;
+  font-weight: 400;
   color: $white;
-  text-transform: lowercase;
 
   &:hover,
   &:focus,
   &:active {
+    background: none;
     background-color: $white;
-    color: $black;
+    color: $red;
   }
-}
-
-.button--arrow {
-  padding-right: 48px;
-
-  &::before {
-    @include pseudo;
-    top: 21px;
-    right: 25px;
-    width: 17px;
-    height: 2px;
-    background: $white;
-  }
-
-  &::after {
-    @include pseudo;
-    top: 17px;
-    right: 25px;
-    width: 10px;
-    height: 10px;
-    border: 2px solid $white;
-    border-top: none;
-    border-left: none;
-    transform: rotate(-45deg);
-  }
-}
-
-.button--arrow:hover::before,
-.button--arrow:focus::before,
-.button--arrow:active::before {
-  background-color: $black;
-}
-
-.button--arrow:hover::after,
-.button--arrow:focus::after,
-.button--arrow:active::after {
-  border-color: $black;
 }

@@ -1,8 +1,10 @@
 .main-nav {
+  width: 100%;
+  padding-top: 80px;
   position: relative;
   display: flex;
   flex-wrap: wrap;
-  padding-right: 90px;
+  flex-direction: column;
 }
 
 .main-nav__toggle {
@@ -12,37 +14,39 @@
 .main-nav__toggle,
 .main-nav__toggle-trigger,
 .main-nav__toggle-burger {
-  width: 30px;
-  height: 30px;
+  width: 80px;
+  height: 80px;
   position: absolute;
-  top: 17px;
-  right: 17px;
   transition: 0.2s ease;
   cursor: pointer;
   z-index: 1;
 }
 
+.main-nav__toggle-trigger {
+  top: 0;
+  left: -26px;
+}
 
 .main-nav__toggle-burger {
-  top: 29px;
-  right: 28px;
-  width: 6px;
-  height: 6px;
+  top: 36px;
+  left: 9px;
+  width: 4px;
+  height: 4px;
   border-radius: 50%;
-  background-color: $black;
-  box-shadow: -12px 0 $black,
-    12px 0 $black,
-    12px 12px $black,
-    -12px -12px $black,
-    12px -12px $black,
-    -12px 12px $black;
+  background-color: $white;
+  box-shadow: -12px 0 $white,
+    12px 0 $white,
+    12px 12px $white,
+    -12px -12px $white,
+    12px -12px $white,
+    -12px 12px $white;
 
   &::before {
     position: absolute;
-    width: 6px;
-    height: 6px;
+    width: 4px;
+    height: 4px;
     border-radius: 50%;
-    background-color: $black;
+    background-color: $white;
     content: "";
     top: -12px;
     left: 0;
@@ -50,10 +54,10 @@
 
   &::after {
     position: absolute;
-    width: 6px;
-    height: 6px;
+    width: 4px;
+    height: 4px;
     border-radius: 50%;
-    background-color: $black;
+    background-color: $white;
     content: "";
     top: 12px;
     left: 0;
@@ -64,10 +68,10 @@
 .main-nav__toggle:checked + .main-nav__toggle-trigger + .main-nav__toggle-burger {
   transform: rotate(180deg);
   box-shadow:
-    12px 12px $black,
-    -12px -12px $black,
-    12px -12px $black,
-    -12px 12px $black;
+    12px 12px $white,
+    -12px -12px $white,
+    12px -12px $white,
+    -12px 12px $white;
   transition: transform 0.2s ease;
 }
 
@@ -85,18 +89,21 @@
 
 .main-nav__additional-list {
   display: none;
-  animation: not-checked-anim 1s both;
-  transition: 0.2s;
 }
 
-.main-nav__toggle:checked + .main-nav__toggle-trigger + .main-nav__toggle-burger + .main-nav__additional-list {
+/*.main-nav__toggle:checked + .main-nav__toggle-trigger + .main-nav__toggle-burger + .main-nav__additional-list {
   animation: checked-anim 1s ease both;
-}
+}*/
 
 .main-nav__toggle:checked + .main-nav__toggle-trigger ~ .main-nav__additional-list {
-  display: block;
+  width: 100%;
+  display: flex;
+}
+
+.main-nav__toggle:checked + .main-nav__toggle-trigger ~ .main-nav__list {
+  width: 100%;
+  display: flex;
 }
 
 .main-nav__list {
-  margin-left: 150px;
 }
