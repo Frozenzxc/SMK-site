@@ -196,54 +196,70 @@
   position: absolute;
   bottom: 27px;
   right: 71px;
-  display: flex;
-  width: 128px;
-  justify-content: space-between;
 }
 
-.clients__nav-button {
-  position: relative;
-  display: block;
-  width: 55px;
-  height: 55px;
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  border-radius: 50%;
-  font-size: 0;
-  cursor: pointer;
-  background-color: transparent;
-
-  &:hover,
-  &:focus {
-    border: 1px solid rgba(255, 255, 255, 0.8);;
+@media (min-width: 768px) {
+  .clients__wrapper {
+    width: 768px;
   }
 
-  &:active {
-    border: 1px solid rgba(255, 255, 255, 1);;
+  .clients__desc {
+    width: 20%;
   }
-}
 
-.clients__nav-button--prev::before {
-  @include pseudo;
+  .clients__image-wrapper {
+    width: 40%;
+  }
 
-  top: calc(50% - 8px);
-  left: calc(50% - 5px);
-  width: 16px;
-  height: 16px;
-  border: 2px solid $white;
-  transform: rotate(45deg);
-  border-top: none;
-  border-right: none;
-}
+  .clients__count-wrapper {
+    order: 4;
+    width: 20%;
+  }
 
-.clients__nav-button--next::before {
-  @include pseudo;
+  .clients__info {
+    order: 5;
+  }
 
-  top: calc(50% - 8px);
-  left: calc(50% - 11px);
-  width: 16px;
-  height: 16px;
-  border: 2px solid $white;
-  transform: rotate(45deg);
-  border-bottom: none;
-  border-left: none;
+  .clients__next-case {
+    order: 3;
+    padding: 48px 43px 20px 44px;
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    background: url("../img/luggage.png"), $white;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .clients__next-title {
+    margin: 0;
+    font-weight: 700;
+    font-size: 10px;
+    line-height: 12px;
+    letter-spacing: 0.2em;
+    color: #000000;
+    text-transform: uppercase;
+  }
+
+  .clients__next-case-btn {
+    margin-top: auto;
+    background: none;
+    border: none;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 26px;
+    letter-spacing: 0.05em;
+    color: #000000;
+
+    &:focus,
+    &:hover,
+    &:active {
+      text-decoration: underline;
+      text-decoration-color: #000000;
+    }
+  }
+
+  .clients__image {
+    width: 100%;
+  }
 }

@@ -104,6 +104,7 @@
   height: 27px;
   font-size: 0;
   background: $white;
+  cursor: pointer;
 
   &::before {
     @include pseudo;
@@ -146,6 +147,7 @@
 .vision__item--active .vision__item-text {
   order: 3;
   padding-left: 30px;
+  padding-right: 10px;
   display: block;
   font-weight: 400;
   font-size: 18px;
@@ -198,4 +200,17 @@
 
 .vision__item--active .vision__close-btn {
   display: block;
+}
+
+@media (min-width: 768px) {
+  .vision__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .vision__item {
+    width: 45%;
+  }
 }

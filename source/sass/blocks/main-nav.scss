@@ -105,5 +105,13 @@
   display: flex;
 }
 
-.main-nav__list {
+@media (min-width: 768px) {
+  .main-nav {
+    padding-top: 20px;
+  }
+
+  .main-nav__toggle ~ .main-nav__list {
+    display: flex;
+    flex-direction: row;
+  }
 }

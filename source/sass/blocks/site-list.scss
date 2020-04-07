@@ -29,3 +29,13 @@
   display: block;
   color: inherit;
 }
+
+@media (min-width: 768px) {
+  .site-list {
+    padding-left: 80px;
+  }
+
+  .site-list__item {
+    margin-right: 40px;
+  }
+}

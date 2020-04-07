@@ -1,14 +1,14 @@
 .nav-wrapper {
   display: flex;
-  width: 78px;
+  width: 128px;
   justify-content: space-between;
 }
 
 .nav-button {
   position: relative;
   display: block;
-  width: 30px;
-  height: 30px;
+  width: 55px;
+  height: 55px;
   border: 1px solid rgba(255, 255, 255, 0.5);
   border-radius: 50%;
   font-size: 0;
@@ -28,10 +28,10 @@
 .nav-button--prev::before {
   @include pseudo;
 
-  top: calc(50% - 4px);
-  left: calc(50% - 3px);
-  width: 8px;
-  height: 8px;
+  top: calc(50% - 8px);
+  left: calc(50% - 5px);
+  width: 16px;
+  height: 16px;
   border: 2px solid $white;
   transform: rotate(45deg);
   border-top: none;
@@ -41,10 +41,10 @@
 .nav-button--next::before {
   @include pseudo;
 
-  top: calc(50% - 4px);
-  left: calc(50% - 5px);
-  width: 8px;
-  height: 8px;
+  top: calc(50% - 8px);
+  left: calc(50% - 11px);
+  width: 16px;
+  height: 16px;
   border: 2px solid $white;
   transform: rotate(45deg);
   border-bottom: none;

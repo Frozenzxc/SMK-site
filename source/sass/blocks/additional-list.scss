@@ -33,3 +33,9 @@
   display: block;
   color: inherit;
 }
+
+@media (min-width: 768px) {
+  .additional-list {
+    padding-top: 30px;
+  }
+}

@@ -56,8 +56,30 @@
 
 .page-header__additional-phone {
   display: none;
+  font-weight: 500;
+  line-height: 20px;
+  color: $white;
 }
 
 .page-header__nav {
   order: 1;
+}
+
+@media (min-width: 768px) {
+  .page-header__logo {
+    margin-top: 32px;
+    margin-bottom: 7px;
+  }
+
+  .page-header__phone {
+    padding: 0;
+    padding-top: 10px;
+    margin-right: 30px;
+  }
+
+  .page-header__additional-phone {
+    order: 4;
+    padding-top: 10px;
+    display: block;
+  }
 }

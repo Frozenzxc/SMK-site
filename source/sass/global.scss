@@ -40,3 +40,17 @@ img {
   padding-left: 26px;
   padding-right: 26px;
 }
+
+@media (min-width: 768px) {
+  .container {
+    width: 768px;
+    padding: 0 50px;
+  }
+
+  .site-wrapper {
+    background-image: url("../img/preview-bg-desktop.png");
+    background-position: top center;
+    background-size: 1140px auto;
+    background-repeat: no-repeat;
+  }
+}
