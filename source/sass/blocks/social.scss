@@ -31,3 +31,18 @@
     opacity: 0.3;
   }
 }
+
+@media (min-width: 1150px) {
+  .social {
+    z-index: 1;
+  }
+
+  .social__item:first-child {
+    margin-left: 0;
+  }
+
+  .social__item {
+    margin-left: 0;
+    margin-bottom: 20px;
+  }
+}

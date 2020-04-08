@@ -39,3 +39,14 @@
     margin-right: 40px;
   }
 }
+
+@media (min-width: 1150px) {
+  .site-list {
+    padding-left: 0;
+    justify-content: space-between;
+  }
+
+  .site-list__item {
+    margin-right: 0;
+  }
+}

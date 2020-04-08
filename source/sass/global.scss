@@ -52,5 +52,17 @@ img {
     background-position: top center;
     background-size: 1140px auto;
     background-repeat: no-repeat;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+}
+
+@media (min-width: 1150px) {
+  .container {
+    width: 1150px;
+    padding: 0 60px;
+  }
+
+  .site-wrapper {
+    background-size: 1200px auto;
   }
 }

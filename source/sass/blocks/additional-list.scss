@@ -39,3 +39,13 @@
     padding-top: 30px;
   }
 }
+
+@media (min-width: 1150px) {
+  .additional-list {
+    padding-top: 0;
+    position: fixed;
+    top: 80px;
+    left: 0;
+    background-color: #3c3c3c;
+  }
+}

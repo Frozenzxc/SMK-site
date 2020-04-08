@@ -83,3 +83,34 @@
     display: block;
   }
 }
+
+@media (min-width: 1150px) {
+  .page-header::before {
+    display: none;
+  }
+
+  .page-header__logo {
+    order: 1;
+  }
+
+  .page-header__nav {
+    order: 2;
+  }
+
+  .page-header__phone {
+    order: 3;
+  }
+
+  .page-header__additional-phone {
+    order: 4;
+  }
+
+  .page-header__social {
+    width: 55px;
+    align-items: flex-start;
+    right: -100%;
+    top: 450px;
+    left: -5px;
+    flex-direction: column;
+  }
+}
