@@ -108,9 +108,20 @@
   .page-header__social {
     width: 55px;
     align-items: flex-start;
-    right: -100%;
+    right: initial;
     top: 450px;
-    left: -5px;
+    left: 10px;
     flex-direction: column;
+  }
+}
+
+@media (min-width: 1440px) {
+  .page-header__logo {
+    margin-left: 20px;
+    margin-right: 61px;
+  }
+
+  .page-header__social {
+    left: 27px;
   }
 }

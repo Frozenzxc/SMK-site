@@ -66,3 +66,14 @@ img {
     background-size: 1200px auto;
   }
 }
+
+@media (min-width: 1440px) {
+  .container {
+    width: 1440px;
+    padding: 0 65px 0 80px;
+  }
+
+  .site-wrapper {
+    background-size: 1440px auto;
+  }
+}

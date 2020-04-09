@@ -228,3 +228,35 @@
     margin-bottom: auto;
   }
 }
+
+@media (min-width: 1440px) {
+  .preview__wrapper {
+    padding-left: 80px;
+  }
+
+  .preview__slogan {
+    font-size: 42px;
+    line-height: 59px;
+    padding-right: 700px;
+  }
+
+  .preview__text {
+    padding-right: 800px;
+  }
+
+  .preview__form {
+    padding-left: 105px;
+  }
+
+  .preview__form::before {
+    display: none;
+  }
+
+  .preview__form-placeholder {
+    left: 420px;
+  }
+
+  .preview__personal-account {
+    margin-right: 65px;
+  }
+}

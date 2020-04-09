@@ -74,15 +74,16 @@
   }
 }
 
-@keyframes move-in {
-  100% {
-    transform: translateX(200px);
-    height: 100%;
+@keyframes img-move-in {
+  to {
+    transform: translateX(100px);
+    height: 621px;
   }
 }
 
-@keyframes move-out {
-  100% {
-    transform: translateX(242px) scale(0.5);
+@keyframes img-move-out {
+  to {
+    transform: translateX(300px) scale(0.5);
+    opacity: 0;
   }
 }

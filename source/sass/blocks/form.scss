@@ -59,3 +59,19 @@
 .form__submit {
   width: 100%;
 }
+
+@media (min-width: 1150px) {
+  .form {
+    padding-top: 100px;
+  }
+
+  .form__title {
+    display: none;
+  }
+}
+
+@media (min-width: 1440px) {
+  .form {
+    padding-top: 74px;
+  }
+}
