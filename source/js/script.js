@@ -73,6 +73,11 @@ const servicesSlider = new Swiper ('.services__gallery-container', {
   // Optional parameters
   slidesPerView: 1,
   loop: true,
+  speed: 1000,
+  effect: `fade`,
+  fadeEffect: {
+    crossFade: true
+  },
   // If we need pagination
 
   // Navigation arrows
@@ -83,7 +88,81 @@ const servicesSlider = new Swiper ('.services__gallery-container', {
   thumbs: {
     swiper: servicesThumbs
   },
+  on: {
+    progress: function(data)  {
+      console.log('event progress', data);
+    }
+  }
 });
+
+const servicesNavBtnNext = document.querySelector(`.services__nav-button--next`);
+
+servicesNavBtnNext.addEventListener(`click`, () => {
+  const activeSlide = servicesSlider.wrapperEl.querySelector(`.swiper-slide-prev`);
+  activeSlide.querySelector(`.services__item-title`).style.animation = `slideOutDown 1s ease`;
+  activeSlide.querySelector(`.services__item-text`).style.animation = `slideOutDown 1s ease`;
+  activeSlide.querySelector(`.services__item-name`).style.animation = `slideOutDown 1s ease`;
+  activeSlide.querySelector(`.services__feedback`).style.animation = `buttonsOut 1s ease`;
+  activeSlide.querySelector(`.services__link`).style.animation = `buttonsOut 1s ease`;
+  activeSlide.querySelector(`.services__video-play-btn`).style.animation = `fadeOut 1s ease`;
+  activeSlide.querySelector(`.services__item-photo`).style.animation = `imgMoveOut 0.8s ease`;
+
+  /*activeSlide.addEventListener(`animationend`, () => {
+    [...activeSlide.children].forEach((child) => child.style.animation = ``);
+    servicesSlider.slideNext();
+  });*/
+
+});
+
+/*servicesSlider.on(`slideChange`, () => {
+  const activeSlide = servicesSlider.wrapperEl.querySelector(`.swiper-slide-active`);
+  activeSlide.querySelector(`.services__item-title`).style.animation = `slideOutDown 1s ease`;
+});*/
+
+servicesSlider.on(`slideChangeTransitionStart`, () => {
+  const activeSlide = servicesSlider.wrapperEl.querySelector(`.swiper-slide-active`);
+  activeSlide.querySelector(`.services__item-title`).style.animation = `slideInUp 1s ease`;
+  activeSlide.querySelector(`.services__item-text`).style.animation = `slideInUp 1s ease`;
+  activeSlide.querySelector(`.services__item-name`).style.animation = `slideInUp 1s ease`;
+  activeSlide.querySelector(`.services__feedback`).style.animation = `buttonsIn 1s ease`;
+  activeSlide.querySelector(`.services__link`).style.animation = `buttonsIn 1s ease`;
+  activeSlide.querySelector(`.services__video-play-btn`).style.animation = `fadeIn 1s ease`;
+  /*activeSlide.querySelector(`.services__item-photo`).style.animation = `imgMoveOut 0.8s ease`;*/
+});
+
+/*servicesSlider.on(`slideChange`, () => {
+  const activeSlide = servicesSlider.wrapperEl.querySelector(`.swiper-slide-active`);
+  const prevSlide = servicesSlider.wrapperEl.querySelector(`.swiper-slide-prev`);
+  const nextSlide = servicesSlider.wrapperEl.querySelector(`.swiper-slide-next`);
+  activeSlide.style.animation = `roll-out 2s ease`;
+  activeSlide.addEventListener(`animationend`, () => {
+    activeSlide.style.animation = ``;
+    prevSlide.style.animation = `roll-in 2s ease`;
+    nextSlide.style.animation = `roll-in 2s ease`;
+    prevSlide.addEventListener(`animationend`, () => {
+      prevSlide.style.animation = ``;
+      nextSlide.style.animation = ``;
+    });
+    nextSlide.addEventListener(`animationend`, () => {
+      prevSlide.style.animation = ``;
+      nextSlide.style.animation = ``;
+    });
+  });
+});*/
+
+/*servicesSlider.on(`slideChange`, () => {
+  const activeSlide = servicesSlider.wrapperEl.querySelector(`.swiper-slide-active`);
+  debugger;
+  activeSlide.style.animation = `roll-out 2s ease`;
+  activeSlide.addEventListener(`animationend`, () => activeSlide.style.animation = ``);
+});
+
+servicesSlider.on(`slideChangeTransitionStart`, () => {
+  const activeSlide = servicesSlider.wrapperEl.querySelector(`.swiper-slide-active`);
+  debugger;
+  activeSlide.style.animation = `roll-in 2s ease`;
+  activeSlide.addEventListener(`animationend`, () => activeSlide.style.animation = ``);
+});*/
 
 /*const servicesWrapper = document.querySelector(`.services__list`);
 
