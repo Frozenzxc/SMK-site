@@ -56,13 +56,16 @@ modalOverlay.addEventListener(`click`, () => {
 //services block slider
 
 const servicesThumbs = new Swiper(`.services__thumbs-container`, {
-
+  preventInteractionOnTransition: true,
+  multipleActiveThumbs: false,
+  initialSlide: 1,
   direction: 'horizontal',
   spaceBetween: 55,
   slidesPerView: 2,
   loop: true,
   freeMode: true,
   slideToClickedSlide: true,
+
   navigation: {
     nextEl: '.services__nav-button--next',
     prevEl: '.services__nav-button--prev',
@@ -70,7 +73,8 @@ const servicesThumbs = new Swiper(`.services__thumbs-container`, {
 });
 
 const servicesSlider = new Swiper ('.services__gallery-container', {
-  // Optional parameters
+  preventInteractionOnTransition: true,
+  initialSlide: 0,
   slidesPerView: 1,
   loop: true,
   speed: 1000,
@@ -78,26 +82,21 @@ const servicesSlider = new Swiper ('.services__gallery-container', {
   fadeEffect: {
     crossFade: true
   },
-  // If we need pagination
 
-  // Navigation arrows
   navigation: {
     nextEl: '.services__nav-button--next',
     prevEl: '.services__nav-button--prev',
   },
+
   thumbs: {
     swiper: servicesThumbs
   },
-  on: {
-    progress: function(data)  {
-      console.log('event progress', data);
-    }
-  }
 });
 
 const servicesNavBtnNext = document.querySelector(`.services__nav-button--next`);
 
-servicesNavBtnNext.addEventListener(`click`, () => {
+/*servicesNavBtnNext.addEventListener(`click`, () => {*/
+servicesSlider.on(`slideChangeTransitionStart`, () => {
   const activeSlide = servicesSlider.wrapperEl.querySelector(`.swiper-slide-prev`);
   activeSlide.querySelector(`.services__item-title`).style.animation = `slideOutDown 1s ease`;
   activeSlide.querySelector(`.services__item-text`).style.animation = `slideOutDown 1s ease`;
@@ -127,62 +126,84 @@ servicesSlider.on(`slideChangeTransitionStart`, () => {
   activeSlide.querySelector(`.services__feedback`).style.animation = `buttonsIn 1s ease`;
   activeSlide.querySelector(`.services__link`).style.animation = `buttonsIn 1s ease`;
   activeSlide.querySelector(`.services__video-play-btn`).style.animation = `fadeIn 1s ease`;
-  /*activeSlide.querySelector(`.services__item-photo`).style.animation = `imgMoveOut 0.8s ease`;*/
+  activeSlide.querySelector(`.services__item-photo`).style.animation = `imgMoveIn 2s ease`;
 });
 
-/*servicesSlider.on(`slideChange`, () => {
-  const activeSlide = servicesSlider.wrapperEl.querySelector(`.swiper-slide-active`);
-  const prevSlide = servicesSlider.wrapperEl.querySelector(`.swiper-slide-prev`);
-  const nextSlide = servicesSlider.wrapperEl.querySelector(`.swiper-slide-next`);
-  activeSlide.style.animation = `roll-out 2s ease`;
-  activeSlide.addEventListener(`animationend`, () => {
-    activeSlide.style.animation = ``;
-    prevSlide.style.animation = `roll-in 2s ease`;
-    nextSlide.style.animation = `roll-in 2s ease`;
-    prevSlide.addEventListener(`animationend`, () => {
-      prevSlide.style.animation = ``;
-      nextSlide.style.animation = ``;
-    });
-    nextSlide.addEventListener(`animationend`, () => {
-      prevSlide.style.animation = ``;
-      nextSlide.style.animation = ``;
-    });
-  });
+/*servicesThumbs.on(`slideChangeTransitionStart`, () => {
+  const activeSlide = servicesThumbs.wrapperEl.querySelector(`.swiper-slide-active`);
+  activeSlide.querySelector(`.services__thumbs-photo`).style.animation = `thumbsMoveIn 2s ease`;
+  servicesThumbs.slideNext(1000, false);
 });*/
 
-/*servicesSlider.on(`slideChange`, () => {
-  const activeSlide = servicesSlider.wrapperEl.querySelector(`.swiper-slide-active`);
-  debugger;
-  activeSlide.style.animation = `roll-out 2s ease`;
-  activeSlide.addEventListener(`animationend`, () => activeSlide.style.animation = ``);
+/*const activeThumb = servicesThumbs.wrapperEl.querySelector(`.swiper-slide-active`);
+const nextThumb = servicesThumbs.wrapperEl.querySelector(`.swiper-slide-next`);
+
+activeThumb.addEventListener(`click`, (evt) => {
+  evt.target.querySelector(`.services__thumbs-photo`).style.animation = `thumbsMoveIn 2s ease`;
+  servicesThumbs.slideNext(1000, false);
 });
 
-servicesSlider.on(`slideChangeTransitionStart`, () => {
-  const activeSlide = servicesSlider.wrapperEl.querySelector(`.swiper-slide-active`);
-  debugger;
-  activeSlide.style.animation = `roll-in 2s ease`;
-  activeSlide.addEventListener(`animationend`, () => activeSlide.style.animation = ``);
+nextThumb.addEventListener(`click`, (evt) => {
+  evt.target.querySelector(`.services__thumbs-photo`).style.animation = `thumbsPrevMoveIn 1.3s linear`;
+  servicesSlider.wrapperEl.querySelector(`.swiper-slide-active`).querySelector(`.services__item-photo`).style.animation = `imgMoveIn 2s ease 2s`;
+  servicesThumbs.slideNext(500, false);
+  servicesThumbs.slideNext(500, false);
 });*/
 
-/*const servicesWrapper = document.querySelector(`.services__list`);
+servicesThumbs.on(`click`, (evt) => {
+  const selectedServiceCard = evt.target.closest(`li`);
+     if (selectedServiceCard.classList.contains(`swiper-slide-active`)) {
+       selectedServiceCard.querySelector(`.services__thumbs-photo`).style.animation = `thumbsMoveIn 2s ease`;
+  } else {
+       selectedServiceCard.querySelector(`.services__thumbs-photo`).style.animation = `thumbsPrevMoveIn 1.3s linear`;
+       servicesThumbs.wrapperEl.querySelector(`.swiper-slide-active`).querySelector(`.services__thumbs-photo`).style.animation = `thumbsMoveOut 1s ease`;
+  }
+});
 
-servicesWrapper.addEventListener(`click`, (evt) => {
-  const currentServiceCard = servicesWrapper.querySelector(`.services__item--active`);
-  const selectedServiceCard = evt.target.closest('li');
-  currentServiceCard.classList.remove(`services__item--active`);
-  selectedServiceCard.classList.add(`services__item--active`);
-  servicesSlider.slideTo(servicesSlider.clickedIndex);
-});*/
-
+servicesThumbs.on(`slideChangeTransitionStart`, () => {
+  const activeSlide = servicesThumbs.wrapperEl.querySelector(`.swiper-slide-active`);
+  activeSlide.querySelector(`.services__thumbs-photo`).style.animation = `thumbsMoveIn 2s ease`;
+});
 
 //clients block slider
 const clientsSlider = new Swiper (`.clients__wrapper`, {
+  preventInteractionOnTransition: true,
+  initialSlide: 0,
   slidesPerView: 1,
   loop: true,
+  speed: 1000,
+  effect: `fade`,
+  fadeEffect: {
+    crossFade: true
+  },
   navigation: {
     nextEl: `.clients__nav-button--next`,
     prevEl: `.clients__nav-button--prev`,
   },
+});
+
+clientsSlider.on(`slideChangeTransitionStart`, () => {
+  const prevSlide = clientsSlider.wrapperEl.querySelector(`.swiper-slide-prev`);
+  prevSlide.querySelector(`.clients__title`).style.animation = `clientsItemsOut 1s ease`;
+  prevSlide.querySelector(`.clients__info`).style.animation = `clientsItemsOut 1s ease`;
+  prevSlide.querySelector(`.clients__text-link`).style.animation = `clientsItemsOut 1s ease`;
+  prevSlide.querySelector(`.clients__text`).style.animation = `clientsItemsOut 1s ease`;
+  prevSlide.querySelector(`.clients__desc`).style.animation = `clientsItemsOut 1s ease`;
+  prevSlide.querySelector(`.clients__image-wrapper`).style.animation = `clientsItemsOut 1s ease 0.1s`;
+  prevSlide.querySelector(`.clients__btn-more`).style.animation = `clientsItemsOut 1s ease 0.3s`;
+  prevSlide.querySelector(`.clients__next-case`).style.animation = `clientsItemsOut 1s ease 0.5s`;
+});
+
+clientsSlider.on(`slideChangeTransitionStart`, () => {
+  const activeSlide = clientsSlider.wrapperEl.querySelector(`.swiper-slide-active`);
+  activeSlide.querySelector(`.clients__title`).style.animation = `clientsItemsIn 1s ease`;
+  activeSlide.querySelector(`.clients__info`).style.animation = `clientsItemsIn 1s ease`;
+  activeSlide.querySelector(`.clients__text-link`).style.animation = `clientsItemsIn 1s ease`;
+  activeSlide.querySelector(`.clients__text`).style.animation = `clientsItemsIn 1s ease`;
+  activeSlide.querySelector(`.clients__desc`).style.animation = `clientsItemsIn 1s ease`;
+  activeSlide.querySelector(`.clients__image-wrapper`).style.animation = `clientsItemsIn 1s ease`;
+  activeSlide.querySelector(`.clients__btn-more`).style.animation = `clientsItemsIn 1s ease 0.2s`;
+  activeSlide.querySelector(`.clients__next-case`).style.animation = `clientsItemsIn 1s ease 0.3s`;
 });
 
 //blog block slider

@@ -72,10 +72,15 @@
   }
 }
 
-@keyframes img-move-in {
-  to {
-    transform: translateX(100px);
-    height: 621px;
+@keyframes imgMoveIn {
+  0% {
+    transform: translate(-200px, 100px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translate(0);
+    opacity: 1;
   }
 }
 
@@ -104,7 +109,7 @@
 @keyframes slideInUp {
   0% {
     opacity: 0;
-    transform: translateY(-1em);
+    transform: translateY(-2em);
   }
 
   50% {
@@ -133,5 +138,74 @@
   100% {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes thumbsMoveIn {
+  0% {
+    transform: translate(0, 0);
+    height: 300px;
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate(300px, -400px);
+    height: 621px;
+    opacity: 0;
+  }
+}
+
+@keyframes thumbsPrevMoveIn {
+  0% {
+    transform: translate(0, 0);
+    height: 300px;
+    opacity: 1;
+  }
+
+  40% {
+    transform: translate(450px, 0);
+    height: 300px;
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate(500px, -400px);
+    height: 621px;
+    opacity: 0;
+  }
+}
+
+@keyframes thumbsMoveOut {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateX(300px);
+    opacity: 0;
+  }
+}
+
+@keyframes clientsItemsOut {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(1000px);
+  }
+}
+
+@keyframes clientsItemsIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
   }
 }
