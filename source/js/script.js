@@ -54,7 +54,7 @@ modalOverlay.addEventListener(`click`, () => {
 });
 
 //services block slider
-
+/*
 const servicesThumbs = new Swiper(`.services__thumbs-container`, {
   preventInteractionOnTransition: true,
   multipleActiveThumbs: false,
@@ -63,7 +63,6 @@ const servicesThumbs = new Swiper(`.services__thumbs-container`, {
   spaceBetween: 55,
   slidesPerView: 2,
   loop: true,
-  freeMode: true,
   slideToClickedSlide: true,
 
   navigation: {
@@ -93,11 +92,8 @@ const servicesSlider = new Swiper ('.services__gallery-container', {
   },
 });
 
-const servicesNavBtnNext = document.querySelector(`.services__nav-button--next`);
-
-/*servicesNavBtnNext.addEventListener(`click`, () => {*/
 servicesSlider.on(`slideChangeTransitionStart`, () => {
-  const activeSlide = servicesSlider.wrapperEl.querySelector(`.swiper-slide-prev`);
+  const activeSlide = servicesSlider.wrapperEl.querySelector(`.swiper-slide-active`);
   activeSlide.querySelector(`.services__item-title`).style.animation = `slideOutDown 1s ease`;
   activeSlide.querySelector(`.services__item-text`).style.animation = `slideOutDown 1s ease`;
   activeSlide.querySelector(`.services__item-name`).style.animation = `slideOutDown 1s ease`;
@@ -106,19 +102,9 @@ servicesSlider.on(`slideChangeTransitionStart`, () => {
   activeSlide.querySelector(`.services__video-play-btn`).style.animation = `fadeOut 1s ease`;
   activeSlide.querySelector(`.services__item-photo`).style.animation = `imgMoveOut 0.8s ease`;
 
-  /*activeSlide.addEventListener(`animationend`, () => {
-    [...activeSlide.children].forEach((child) => child.style.animation = ``);
-    servicesSlider.slideNext();
-  });*/
-
 });
 
-/*servicesSlider.on(`slideChange`, () => {
-  const activeSlide = servicesSlider.wrapperEl.querySelector(`.swiper-slide-active`);
-  activeSlide.querySelector(`.services__item-title`).style.animation = `slideOutDown 1s ease`;
-});*/
-
-servicesSlider.on(`slideChangeTransitionStart`, () => {
+servicesSlider.on(`slideChangeTransitionEnd`, () => {
   const activeSlide = servicesSlider.wrapperEl.querySelector(`.swiper-slide-active`);
   activeSlide.querySelector(`.services__item-title`).style.animation = `slideInUp 1s ease`;
   activeSlide.querySelector(`.services__item-text`).style.animation = `slideInUp 1s ease`;
@@ -128,7 +114,7 @@ servicesSlider.on(`slideChangeTransitionStart`, () => {
   activeSlide.querySelector(`.services__video-play-btn`).style.animation = `fadeIn 1s ease`;
   activeSlide.querySelector(`.services__item-photo`).style.animation = `imgMoveIn 2s ease`;
 });
-
+*/
 /*servicesThumbs.on(`slideChangeTransitionStart`, () => {
   const activeSlide = servicesThumbs.wrapperEl.querySelector(`.swiper-slide-active`);
   activeSlide.querySelector(`.services__thumbs-photo`).style.animation = `thumbsMoveIn 2s ease`;
@@ -149,9 +135,10 @@ nextThumb.addEventListener(`click`, (evt) => {
   servicesThumbs.slideNext(500, false);
   servicesThumbs.slideNext(500, false);
 });*/
-
+/*
 servicesThumbs.on(`click`, (evt) => {
   const selectedServiceCard = evt.target.closest(`li`);
+  servicesThumbs.slideTo(servicesThumbs.realIndex);
      if (selectedServiceCard.classList.contains(`swiper-slide-active`)) {
        selectedServiceCard.querySelector(`.services__thumbs-photo`).style.animation = `thumbsMoveIn 2s ease`;
   } else {
@@ -164,7 +151,7 @@ servicesThumbs.on(`slideChangeTransitionStart`, () => {
   const activeSlide = servicesThumbs.wrapperEl.querySelector(`.swiper-slide-active`);
   activeSlide.querySelector(`.services__thumbs-photo`).style.animation = `thumbsMoveIn 2s ease`;
 });
-
+*/
 //clients block slider
 const clientsSlider = new Swiper (`.clients__wrapper`, {
   preventInteractionOnTransition: true,

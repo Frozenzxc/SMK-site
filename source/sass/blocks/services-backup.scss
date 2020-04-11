@@ -1,0 +1,608 @@
+.services {
+  background-color: #2c2c2c;
+}
+
+.services__wrapper {
+  padding-top: 59px;
+  padding-bottom: 48px;
+  position: relative;
+}
+
+.services__title {
+  margin: 0;
+  margin-bottom: 25px;
+  font-size: 22px;
+  line-height: 28px;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: lowercase;
+}
+
+.services__subtitle {
+  display: none;
+  margin: 0;
+  font-weight: 300;
+  font-size: 32px;
+  line-height: 42px;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.services__list {
+  @include list-reset;
+}
+
+.services__item {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.services__item-photo {
+  display: none;
+}
+
+.services__item-title {
+  order: 1;
+  margin: 0;
+  margin-bottom: 40px;
+  font-size: 32px;
+  line-height: 42px;
+  font-weight: 300;
+}
+
+.services__item-name {
+  margin: 0;
+  display: none;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.services__video-play-btn {
+  order: 2;
+  margin-bottom: 30px;
+  display: block;
+  padding-left: 50px;
+  padding-right: 155px;
+  min-height: 40px;
+  background-image: url("../img/play.svg");
+  background-repeat: no-repeat;
+  background-position: left 0;
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.services__item-text {
+  order: 3;
+  margin-bottom: 48px;
+  padding-right: 19px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.services__btn-more {
+  padding-left: 10px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: $red;
+
+  &:focus,
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.services__feedback {
+  order: 4;
+  margin-bottom: 30px;
+  align-self: flex-start;
+}
+
+.services__link {
+  order: 5;
+  align-self: flex-start;
+  position: relative;
+  display: block;
+  padding: 9px 39px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  font-size: 16px;
+  line-height: 28px;
+  font-weight: 400;
+  color: $white;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: rgba(255, 255, 255, 0.6);
+    color: $black;
+  }
+}
+
+.services__nav-wrapper {
+  position: absolute;
+  top: 51px;
+  right: 28px;
+  display: flex;
+  width: 90px;
+  justify-content: space-between;
+}
+
+.services__nav-button {
+  position: relative;
+  display: block;
+  width: 30px;
+  height: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  font-size: 0;
+  cursor: pointer;
+  background-color: transparent;
+
+  &:hover,
+  &:focus {
+    border: 1px solid rgba(255, 255, 255, 0.8);
+  }
+
+  &:active {
+    border: 1px solid rgba(255, 255, 255, 1);
+  }
+}
+
+.services__nav-button--prev::before {
+  @include pseudo;
+
+  top: calc(50% - 4px);
+  left: calc(50% - 3px);
+  width: 8px;
+  height: 8px;
+  border: 2px solid $white;
+  transform: rotate(45deg);
+  border-top: none;
+  border-right: none;
+}
+
+.services__nav-button--next::before {
+  @include pseudo;
+
+  top: calc(50% - 4px);
+  left: calc(50% - 5px);
+  width: 8px;
+  height: 8px;
+  border: 2px solid $white;
+  transform: rotate(45deg);
+  border-bottom: none;
+  border-left: none;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font: inherit;
+}
+
+.services__thumbs {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .services__video-play-btn {
+    padding-top: 13px;
+    margin-bottom: 20px;
+  }
+
+  .services__nav-wrapper {
+    width: 90px;
+  }
+}
+
+
+@media (min-width: 1150px) {
+  .services {
+    background-color: #171717;
+  }
+
+  .services__wrapper {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 130px;
+    padding-bottom: 75px;
+  }
+
+  .services__title {
+    display: none;
+  }
+
+  .services__subtitle {
+    position: absolute;
+    top: 20%;
+    left: 24%;
+    width: 150px;
+    transform: rotate(-90deg);
+    display: block;
+  }
+
+  .services__thumbs-container {
+    width: 40%;
+    height: 621px;
+  }
+
+  .services__gallery-container {
+    width: 55%;
+    height: 621px;
+  }
+
+  .services__thumbs {
+    @include list-reset;
+
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    min-height: 621px;
+    width: 100%;
+  }
+
+  .services__thumbs-item {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    width: 242px;
+    height: 300px;
+  }
+
+  .services__thumbs-title {
+    margin: 0;
+    margin-top: auto;
+    padding-left: 19px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: $white;
+    text-align: left;
+  }
+
+  .services__thumbs-name {
+    margin: 0;
+    margin-bottom: 20px;
+    padding-left: 19px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: rgba(255, 255, 255, 0.6);
+    text-align: left;
+  }
+
+  .services__list {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    width: 100%;
+    min-height: 621px;
+    box-sizing: inherit;
+  }
+
+  .services__thumbs-item::before {
+    @include pseudo;
+
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 4px;
+    background-color: $red;
+    transition: 0.4s ease;
+  }
+
+  .services__thumbs-item:focus::before,
+  .services__thumbs-item:hover::before {
+    width: 100%;
+  }
+
+  .services__thumbs-item-title {
+    margin-top: auto;
+  }
+
+  .services__thumbs-photo {
+    display: block;
+    height: 300px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+
+  .services__item {
+    padding-left: 250px;
+    width: 100%;
+    height: 621px;
+    position: relative;
+    flex-direction: column;
+  }
+
+  .services__item-title {
+    order: 1;
+    width: 60%;
+    margin-bottom: 20px;
+  }
+
+  .services__item-photo {
+    display: block;
+    height: 621px;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .services__item-name {
+    order: 2;
+    display: block;
+    width: 60%;
+    margin-bottom: 20px;
+  }
+
+  .services__item-text {
+    order: 3;
+    display: block;
+    width: 60%;
+    margin-bottom: 50px;
+  }
+
+  .services__feedback {
+    order: 4;
+    display: block;
+    width: 60%;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .services__link {
+    order: 5;
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 60%;
+    text-align: center;
+  }
+
+  .services__video-play-btn {
+    margin: 0;
+    padding: 0;
+    padding-top: 50px;
+    padding-right: 70px;
+    background-position: left top;
+    width: 212px;
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+  }
+
+  .services__nav-wrapper {
+    display: flex;
+    top: 750px;
+    right: 135px;
+    width: 150px;
+    justify-content: space-between;
+  }
+
+  .services__nav-button {
+    position: relative;
+    display: block;
+    width: 55px;
+    height: 55px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    font-size: 0;
+    cursor: pointer;
+    background-color: transparent;
+
+    &:hover,
+    &:focus {
+      border: 1px solid rgba(255, 255, 255, 0.8);
+    }
+
+    &:active {
+      border: 1px solid rgba(255, 255, 255, 1);
+    }
+  }
+
+  .services__nav-button--prev::before {
+    @include pseudo;
+
+    top: calc(50% - 8px);
+    left: calc(50% - 5px);
+    width: 16px;
+    height: 16px;
+    border: 2px solid $white;
+    transform: rotate(45deg);
+    border-top: none;
+    border-right: none;
+  }
+
+  .services__nav-button--next::before {
+    @include pseudo;
+
+    top: calc(50% - 8px);
+    left: calc(50% - 11px);
+    width: 16px;
+    height: 16px;
+    border: 2px solid $white;
+    transform: rotate(45deg);
+    border-bottom: none;
+    border-left: none;
+  }
+}
+
+@media (min-width: 1440px) {
+  .services__item {
+    padding-left: 320px;
+  }
+
+  .services__btn-more {
+    padding-left: 0;
+  }
+
+  .services__feedback {
+    width: initial;
+  }
+
+  .services__link {
+    width: initial;
+    padding-left: 34px;
+    padding-right: 34px;
+  }
+
+  .services__nav-wrapper {
+    top: 690px;
+  }
+}
+
+
+<section class="services" id="services">
+<div class="services__wrapper container">
+<h2 class="services__title">
+                           Service
+</h2>
+<h2 class="services__subtitle">Service & Team</h2>
+<!--<div class="services__thumbs-container swiper-container" dir="rtl">
+<ul class="services__thumbs swiper-wrapper">
+<li class="services__thumbs-item swiper-slide">
+<h3 class="services__thumbs-title">
+                                  Маркетинг 1
+</h3>
+<img class="services__thumbs-photo" src="img/Ekaterina.png" width="242" height="300" alt="Екатерина">
+<p class="services__thumbs-name">Екатерина</p>
+</li>
+<li class="services__thumbs-item swiper-slide">
+<h3 class="services__thumbs-title">
+                                  Маркетинг 2
+</h3>
+<img class="services__thumbs-photo" src="img/Ekaterina.png" width="242" height="300" alt="Екатерина">
+<p class="services__thumbs-name">Екатерина</p>
+</li>
+<li class="services__thumbs-item swiper-slide">
+<h3 class="services__thumbs-title">
+                                  Маркетинг 3
+</h3>
+<img class="services__thumbs-photo" src="img/Ekaterina.png" width="242" height="300" alt="Екатерина">
+<p class="services__thumbs-name">Екатерина</p>
+</li>
+<li class="services__thumbs-item swiper-slide">
+<h3 class="services__thumbs-title">
+                                  Маркетинг 4
+</h3>
+<img class="services__thumbs-photo" src="img/Ekaterina.png" width="242" height="300" alt="Екатерина">
+<p class="services__thumbs-name">Екатерина</p>
+</li>
+<li class="services__thumbs-item swiper-slide">
+<h3 class="services__thumbs-title">
+                                  SEO продвижение
+</h3>
+<img class="services__thumbs-photo" src="img/Irina.png" width="242" height="300" alt="Ирина">
+<p class="services__thumbs-name">Ирина</p>
+</li>
+<li class="services__thumbs-item swiper-slide">
+<h3 class="services__thumbs-title">
+                                  Маркетинговые исследования
+</h3>
+<img class="services__thumbs-photo" src="img/Aleksandr.png" width="242" height="300" alt="Александр">
+<p class="services__thumbs-name">Александр Бутивченко</p>
+</li>
+</ul>
+</div>-->
+
+<ul class="services__list swiper-wrapper">
+<!--<li class="services__item swiper-slide">
+<h3 class="services__item-title">
+                                Маркетинг 1
+</h3>
+<img class="services__item-photo" src="img/Ekaterina.png" width="242" height="300" alt="Екатерина">
+<p class="services__item-name">Екатерина</p>
+<p class="services__item-text">
+                              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+<a class="services__btn-more" href="#">Подробнее</a>
+</p>
+<a class="services__feedback button" href="#">Обсудить проект</a>
+<a class="services__link">Посмотреть все услуги</a>
+<a class="services__video-play-btn" href="#">Посмотреть видео об услуге</a>
+</li>
+<li class="services__item swiper-slide">
+<h3 class="services__item-title">
+                                Маркетинг 2
+</h3>
+<img class="services__item-photo" src="img/Ekaterina.png" width="242" height="300" alt="Екатерина">
+<p class="services__item-name">Екатерина</p>
+<p class="services__item-text">
+                              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+<a class="services__btn-more" href="#">Подробнее</a>
+</p>
+<a class="services__feedback button" href="#">Обсудить проект</a>
+<a class="services__link">Посмотреть все услуги</a>
+<a class="services__video-play-btn" href="#">Посмотреть видео об услуге</a>
+</li>
+<li class="services__item swiper-slide">
+<h3 class="services__item-title">
+                                Маркетинг 3
+</h3>
+<img class="services__item-photo" src="img/Ekaterina.png" width="242" height="300" alt="Екатерина">
+<p class="services__item-name">Екатерина</p>
+<p class="services__item-text">
+                              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+<a class="services__btn-more" href="#">Подробнее</a>
+</p>
+<a class="services__feedback button" href="#">Обсудить проект</a>
+<a class="services__link">Посмотреть все услуги</a>
+<a class="services__video-play-btn" href="#">Посмотреть видео об услуге</a>
+</li>-->
+<li class="services__item services__item--active swiper-slide">
+<h3 class="services__item-title">
+                                Маркетинг 4
+</h3>
+<img class="services__item-photo" src="img/Ekaterina.png" width="242" height="300" alt="Екатерина">
+<p class="services__item-name">Екатерина</p>
+<p class="services__item-text">
+                              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+<a class="services__btn-more" href="#">Подробнее</a>
+</p>
+<a class="services__feedback button" href="#">Обсудить проект</a>
+<a class="services__link">Посмотреть все услуги</a>
+<a class="services__video-play-btn" href="#">Посмотреть видео об услуге</a>
+</li>
+<li class="services__item swiper-slide">
+<h3 class="services__item-title">
+                                SEO продвижение
+</h3>
+<img class="services__item-photo" src="img/Irina.png" width="242" height="300" alt="Ирина">
+<p class="services__item-name">Ирина</p>
+<p class="services__item-text">
+                              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+<a class="services__btn-more" href="#">Подробнее</a>
+</p>
+<a class="services__feedback button" href="#">Обсудить проект</a>
+<a class="services__link">Посмотреть все услуги</a>
+<a class="services__video-play-btn" href="#">Посмотреть видео об услуге</a>
+</li>
+<li class="services__item swiper-slide">
+<h3 class="services__item-title">
+                                Маркетинговые исследования
+</h3>
+<img class="services__item-photo" src="img/Aleksandr.png" width="242" height="300" alt="Александр">
+<p class="services__item-name">Александр Бутивченко</p>
+<p class="services__item-text">
+                              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+<a class="services__btn-more" href="#">Подробнее</a>
+</p>
+<a class="services__feedback button" href="#">Обсудить проект</a>
+<a class="services__link">Посмотреть все услуги</a>
+<a class="services__video-play-btn" href="#">Посмотреть видео об услуге</a>
+</li>
+</ul>
+
+<div class="services__nav-wrapper">
+<button class="services__nav-button services__nav-button--prev swiper-button-prev" type="button">Предыдущий</button>
+<button class="services__nav-button services__nav-button--next swiper-button-next" type="button">Следующий</button>
+</div>
+</div>
+</section>
