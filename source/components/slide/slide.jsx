@@ -1,8 +1,17 @@
-import React, {PureComponent} from "react";
+import React, {Component} from "react";
 import PropTypes from "prop-types";
-import {clearAnim, followingSlideClickAnim, onNextSlideClickAnim, setAnimIn, setAnimOut} from "../../animation";
+import {
+  clearAnim,
+  followingSlideClickAnim, followSlideOut,
+  onNextSlideClickAnim,
+  setAnimIn,
+  setAnimOut,
+  nextSlideMove
+} from "../../animation";
+import {SlideType} from "../../const";
 
-class Slide extends PureComponent {
+
+class Slide extends Component {
   constructor(props) {
     super(props);
     this.slide = React.createRef();
@@ -17,11 +26,21 @@ class Slide extends PureComponent {
   componentDidUpdate(prevProps) {
     if (prevProps.isActive) {
       setAnimOut(this.slide.current);
-    } else if (prevProps.isFollowing) {
-      followingSlideClickAnim(this.slide.current);
-    } else if (prevProps.isNext) {
-      onNextSlideClickAnim(this.slide.current);
+    } else if (this.props.clickedSlide === SlideType.NEXT) {
+      if (prevProps.isFollowing) {
+        nextSlideMove(this.slide.current);
+      } else if (prevProps.isNext) {
+        followingSlideClickAnim(this.slide.current);
+      }
+    } else if (this.props.clickedSlide === SlideType.FOLLOW) {
+      if (prevProps.isFollowing) {
+        onNextSlideClickAnim(this.slide.current);
+      } else if (prevProps.isNext) {
+        followSlideOut(this.slide.current);
+      }
     }
+
+
   }
 
   shouldComponentUpdate(nextProps) {
@@ -34,18 +53,18 @@ class Slide extends PureComponent {
   }
 
   onClick() {
-    const {isNext, onSlideClick, slide} = this.props;
+    const {onSlideClick, slide} = this.props;
 
     onSlideClick(slide.id);
   }
 
   render() {
-    const {isActive, isFollowing, isNext, isSlideChange, slide} = this.props;
+    const {isActive, isFollowing, isNext, slide} = this.props;
 
     return (
       <li
-        className={`${isActive && `services__item--active`} ${isFollowing && `services__item--next`} ${isNext && `services__item--next`} services__item swiper-slide`}
-        onClick={this.onClick}
+        className={`${isActive && `services__item--active`} ${isFollowing && `services__item--follow`} ${isNext && `services__item--next`} services__item`}
+        onClick={!isActive ? this.onClick : () => {}}
         ref={this.slide}
       >
         <h3 className="services__item-title">
@@ -75,7 +94,7 @@ Slide.propTypes = {
     text: PropTypes.string.isRequired,
   }),
   isActive: PropTypes.bool.isRequired,
-  isSlideChange: PropTypes.bool.isRequired,
+  clickedSlide: PropTypes.string.isRequired,
   isNext: PropTypes.bool.isRequired,
   isFollowing: PropTypes.bool.isRequired,
   onSlideClick: PropTypes.func.isRequired,
