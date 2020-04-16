@@ -10,6 +10,7 @@
     <link rel="preload" href="fonts/Montserrat-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
     <link href="css/swiper.min.css" rel="stylesheet">
     <link href="css/style.min.css" rel="stylesheet">
+
   </head>
   <body>
     <div style="display: none;">
@@ -28,16 +29,16 @@
     <label class="main-nav__toggle-burger" for="main-nav__toggle"></label>
              <ul class="main-nav__list site-list">
                <li class="site-list__item">
-                 <a class="site-list__link" href="#">Услуги</a>
+                 <a class="site-list__link" href="#services">Услуги</a>
                </li>
               <li class="site-list__item">
-                <a class="site-list__link" href="#">О нас</a>
+                <a class="site-list__link" href="#vision">О нас</a>
               </li>
               <li class="site-list__item">
-                <a class="site-list__link" href="#">Кейсы</a>
+                <a class="site-list__link" href="#clients">Кейсы</a>
               </li>
                 <li class="site-list__item">
-                <a class="site-list__link" href="#">Контакты</a>
+                <a class="site-list__link" href="#page-footer">Контакты</a>
               </li>
             </ul>
             <ul class="main-nav__additional-list additional-list">
@@ -96,19 +97,22 @@
             <p class="preview__text">Программный пакет, унифицированная оформительская среда, в которой с более тесной интеграцией</p>
             <form class="preview__form" action="post">
               <p class="preview__form-text">Узнайте сколько может зарабатывать ваш сайт</p>
-              <input type="tel" class="preview__form-input" id="preview__form-input">
+              <input type="tel" class="preview__form-input" id="preview__form-input" placeholder="+7 (999) 999 9999">
               <label for="preview__form-input">
-                <span class="preview__form-placeholder">+7 (999) 999 9999</span>
+                <span class="preview__form-placeholder"></span>
               </label>
               <button type="submit" class="preview__form-submit button">Отправить</button>
             </form>
             <a class="preview__personal-account" href="#">Личный кабинет</a>
+            <div class="preview__count-wrapper page-count__wrapper">
+              <span class="preview__page-number page-number">1</span>
+              <span class="preview__page-count page-count">6</span>
+            </div>
           </div>
         </section>
         <section class="services" id="services">
-
         </section>
-        <section class="vision">
+        <section class="vision" id="vision">
           <div class="vision__wrapper container">
             <h2 class="vision__title">Vision</h2>
             <h2 class="vision__subtitle">Наше виденье по шагам</h2>
@@ -127,7 +131,7 @@
                     <li class="vision__desc-item">Конкурентный анализ</li>
                   </ul>
                 </div>
-                <a class="vision__feedback" href="#">Обсудить проект</a>
+                <a class="vision__feedback" href="#">Провести анализ</a>
                 <button class="vision__close-btn" type="button">Закрыть</button>
               </li>
               <li class="vision__item">
@@ -144,7 +148,7 @@
                     <li class="vision__desc-item">Конкурентный анализ</li>
                   </ul>
                 </div>
-                <a class="vision__feedback" href="#">Обсудить проект</a>
+                <a class="vision__feedback" href="#">Провести анализ</a>
                 <button class="vision__close-btn" type="button">Закрыть</button>
               </li>
               <li class="vision__item">
@@ -161,7 +165,7 @@
                     <li class="vision__desc-item">Конкурентный анализ</li>
                   </ul>
                 </div>
-                <a class="vision__feedback" href="#">Обсудить проект</a>
+                <a class="vision__feedback" href="#">Провести анализ</a>
                 <button class="vision__close-btn" type="button">Закрыть</button>
               </li>
               <li class="vision__item">
@@ -178,7 +182,7 @@
                     <li class="vision__desc-item">Конкурентный анализ</li>
                   </ul>
                 </div>
-                <a class="vision__feedback" href="#">Обсудить проект</a>
+                <a class="vision__feedback" href="#">Провести анализ</a>
                 <button class="vision__close-btn" type="button">Закрыть</button>
               </li>
               <li class="vision__item">
@@ -195,7 +199,7 @@
                     <li class="vision__desc-item">Конкурентный анализ</li>
                   </ul>
                 </div>
-                <a class="vision__feedback" href="#">Обсудить проект</a>
+                <a class="vision__feedback" href="#">Провести анализ</a>
                 <button class="vision__close-btn" type="button">Закрыть</button>
               </li>
               <li class="vision__item">
@@ -212,7 +216,7 @@
                     <li class="vision__desc-item">Конкурентный анализ</li>
                   </ul>
                 </div>
-                <a class="vision__feedback" href="#">Обсудить проект</a>
+                <a class="vision__feedback" href="#">Провести анализ</a>
                 <button class="vision__close-btn" type="button">Закрыть</button>
               </li>
               <li class="vision__item">
@@ -229,7 +233,7 @@
                     <li class="vision__desc-item">Конкурентный анализ</li>
                   </ul>
                 </div>
-                <a class="vision__feedback" href="#">Обсудить проект</a>
+                <a class="vision__feedback" href="#">Провести анализ</a>
                 <button class="vision__close-btn" type="button">Закрыть</button>
               </li>
               <li class="vision__item">
@@ -246,18 +250,23 @@
                     <li class="vision__desc-item">Конкурентный анализ</li>
                   </ul>
                 </div>
-                <a class="vision__feedback" href="#">Обсудить проект</a>
+                <a class="vision__feedback" href="#">Провести анализ</a>
                 <button class="vision__close-btn" type="button">Закрыть</button>
               </li>
             </ul>
+            <div class="vision__count-wrapper page-count__wrapper">
+              <span class="vision__page-number page-number">3</span>
+              <span class="vision__page-count page-count">6</span>
+            </div>
           </div>
         </section>
-      <section class="clients">
+      <section class="clients" id="clients">
         <div class="clients__wrapper swiper-container">
           <h2 class="visually-hidden">Наши клиенты</h2>
           <ul class="clients__list swiper-wrapper">
             <li class="clients__item swiper-slide">
               <h3 class="clients__title">Olympic kitchen 1</h3>
+              <a class="clients__additional-link" href="">Посмотреть выполненные услуги</a>
               <div class="clients__count-wrapper">
                 <span class="clients__slide-number">01</span>
                 <span class="clients__slide-count">09</span>
@@ -286,11 +295,26 @@
                 <h4 class="clients__next-title">Туристическое агентсво</h4>
                 <button class="clients__next-case-btn" type="button">Следующий кейс</button>
               </div>
+              <div class="clients__modal">
+                <h3 class="clients__modal-title">Выполненные услуги по проекту</h3>
+                <ul class="clients__modal-list">
+                  <li class="clients__modal-item">UX анализ</li>
+                  <li class="clients__modal-item">UI анализ</li>
+                  <li class="clients__modal-item">Конкурентый анализ</li>
+                  <li class="clients__modal-item">UX анализ</li>
+                  <li class="clients__modal-item">UI анализ</li>
+                  <li class="clients__modal-item">Конкурентый анализ</li>
+                </ul>
+                <a class="clients__modal-link" href="#">Прочитать кейс</a>
+                <button class="clients__modal-close-btn" type="button">Закрыть</button>
+              </div>
+              <div class="clients__modal-overlay modal-overlay modal-overlay--dark modal-close"></div>
             </li>
             <li class="clients__item swiper-slide">
               <h3 class="clients__title">Olympic kitchen 2</h3>
+              <a class="clients__additional-link" href="">Посмотреть выполненные услуги</a>
               <div class="clients__count-wrapper">
-                <span class="clients__slide-number">01</span>
+                <span class="clients__slide-number">02</span>
                 <span class="clients__slide-count">09</span>
               </div>
               <p class="clients__info">Разработка бренда и вывод на рынок
@@ -317,11 +341,26 @@
                 <h4 class="clients__next-title">Туристическое агентсво</h4>
                 <button class="clients__next-case-btn" type="button">Следующий кейс</button>
               </div>
+              <div class="clients__modal">
+                <h3 class="clients__modal-title">Выполненные услуги по проекту</h3>
+                <ul class="clients__modal-list">
+                  <li class="clients__modal-item">UX анализ</li>
+                  <li class="clients__modal-item">UI анализ</li>
+                  <li class="clients__modal-item">Конкурентый анализ</li>
+                  <li class="clients__modal-item">UX анализ</li>
+                  <li class="clients__modal-item">UI анализ</li>
+                  <li class="clients__modal-item">Конкурентый анализ</li>
+                </ul>
+                <a class="clients__modal-link" href="#">Прочитать кейс</a>
+                <button class="clients__modal-close-btn" type="button">Закрыть</button>
+              </div>
+              <div class="clients__modal-overlay modal-overlay modal-overlay--dark modal-close"></div>
             </li>
             <li class="clients__item swiper-slide">
               <h3 class="clients__title">Olympic kitchen 3</h3>
+              <a class="clients__additional-link" href="">Посмотреть выполненные услуги</a>
               <div class="clients__count-wrapper">
-                <span class="clients__slide-number">01</span>
+                <span class="clients__slide-number">03</span>
                 <span class="clients__slide-count">09</span>
               </div>
               <p class="clients__info">Разработка бренда и вывод на рынок
@@ -348,6 +387,20 @@
                 <h4 class="clients__next-title">Туристическое агентсво</h4>
                 <button class="clients__next-case-btn" type="button">Следующий кейс</button>
               </div>
+              <div class="clients__modal">
+                <h3 class="clients__modal-title">Выполненные услуги по проекту</h3>
+                <ul class="clients__modal-list">
+                  <li class="clients__modal-item">UX анализ</li>
+                  <li class="clients__modal-item">UI анализ</li>
+                  <li class="clients__modal-item">Конкурентый анализ</li>
+                  <li class="clients__modal-item">UX анализ</li>
+                  <li class="clients__modal-item">UI анализ</li>
+                  <li class="clients__modal-item">Конкурентый анализ</li>
+                </ul>
+                <a class="clients__modal-link" href="#">Прочитать кейс</a>
+                <button class="clients__modal-close-btn" type="button">Закрыть</button>
+              </div>
+              <div class="clients__modal-overlay modal-overlay modal-overlay--dark modal-close"></div>
             </li>
           </ul>
           <div class="clients__nav-wrapper nav-wrapper">
@@ -532,7 +585,7 @@
           <ul class="blog__counter swiper-pagination">
             <li><button class="blog__counter-item" type="button">01</button></li>
             <li><button class="blog__counter-item" type="button">02</button></li>
-            <li><button class="blog__counter-item blog__counter-item--active" type="button">03</button></li>
+            <li><button class="blog__counter-item" type="button">03</button></li>
             <li><button class="blog__counter-item" type="button">04</button></li>
             <li><button class="blog__counter-item" type="button">05</button></li>
             <li><button class="blog__counter-item" type="button">06</button></li>
@@ -545,7 +598,7 @@
           </div>
         </section>
       </main>
-      <footer class="page-footer">
+      <footer class="page-footer" id="page-footer">
         <div class="page-footer__wrapper container">
           <h2 class="page-footer__title">Контакты</h2>
           <h2 class="page-footer__subtitle">Contact us</h2>
@@ -614,12 +667,17 @@
               </a>
             </li>
           </ul>
+          <div class="page-footer__count-wrapper page-count__wrapper">
+            <span class="page-footer__page-number page-number">6</span>
+            <span class="page-footer__page-count page-count">6</span>
+          </div>
         </div>
       </footer>
     </div>
     <div class="modal-overlay modal-close" id="modal-overlay"></div>
     <script src="js/swiper.min.js"></script>
-  <script src="js/script.js"></script>
     <script src="bundle.js"></script>
+  <script src="js/script.js"></script>
+
   </body>
 </html>

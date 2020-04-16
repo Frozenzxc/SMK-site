@@ -225,3 +225,29 @@
     transform: translateX(0);
   }
 }
+
+@keyframes modalFromLeft {
+  0% {
+    transform: translateX(500px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes modalFromRight {
+  0% {
+    transform: translateX(-500px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes visionScale {
+  100% {
+    transform: scale(1.1);
+  }
+}

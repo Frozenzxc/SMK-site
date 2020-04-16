@@ -112,6 +112,10 @@ class App extends PureComponent {
             type="button" onClick={this.handleNextSlideBtnClick}>Следующий
           </button>
         </div>
+        <div className="services__count-wrapper page-count__wrapper">
+          <span className="services__page-number page-number">2</span>
+          <span className="services__page-count page-count">6</span>
+        </div>
       </div>
     );
   }

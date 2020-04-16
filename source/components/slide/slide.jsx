@@ -80,6 +80,19 @@ class Slide extends Component {
         <a className="services__feedback button" href="#">Обсудить проект</a>
         <a className="services__link">Посмотреть все услуги</a>
         <a className="services__video-play-btn" href="#">Посмотреть видео об услуге</a>
+        <div className="services__modal">
+          <h3 className="services__modal-title">Маркетинговые исследования</h3>
+          <p className="services__modal-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+            sed do eiusmod tempor
+            incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur
+            adipiscing elit, sed do eiusmod tempor incididunt ut labore
+          </p>
+          <a className="services__modal-link" href="#">Обсудить проект</a>
+          <button className="services__modal-close-btn" type="button">Закрыть</button>
+        </div>
+        <div className="services__modal-overlay modal-overlay modal-overlay--dark modal-close"/>
       </li>
     );
   }

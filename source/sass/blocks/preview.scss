@@ -66,26 +66,32 @@
 
 .preview__form-placeholder {
   position: absolute;
-  top: 114px;
-  left: 30%;
+  top: 115px;
+  left: 55px;
+  width: 15px;
+  height: 15px;
+}
+
+.preview__form-input::placeholder {
   font-size: 16px;
   line-height: 28px;
   color: rgba(255, 255, 255, 0.5);
+  padding-left: 35px;
 }
 
 .preview__form-placeholder::before {
   @include pseudo;
 
-  top: 7px;
-  left: -22px;
+  top: 5px;
+  left: -11px;
   width: 15px;
   height: 15px;
   background-image: url("../img/phone.svg");
   background-repeat: no-repeat;
 }
 
-.preview__form-input:focus + .preview__form-placeholder,
-.preview__form-input:active + .preview__form-placeholder {
+.preview__form-input:focus + label,
+.preview__form-input:active + label {
   display: none;
 }
 
@@ -99,6 +105,20 @@
   font-size: 16px;
   line-height: 20px;
   color: $white;
+  transition: 0.1s ease;
+
+  &:focus,
+  &:hover {
+    opacity: 0.6;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+}
+
+.preview__count-wrapper {
+  display: none;
 }
 
 @media (min-width: 768px) {
@@ -151,8 +171,8 @@
   }
 
   .preview__form-placeholder {
-    left: 60px;
-    top: 88px;
+    left: 55px;
+    top: 90px;
   }
 
   .preview__personal-account {
@@ -174,14 +194,14 @@
 
   .preview__slogan {
     margin-bottom: 30px;
-    padding-left: 0;
+    padding-left: 100px;
     padding-right: 525px;
     text-align: left;
   }
 
   .preview__text {
-    margin-bottom: 130px;
-    padding-left: 0;
+    margin-bottom: 108px;
+    padding-left: 100px;
     padding-right: 525px;
     text-align: left;
   }
@@ -189,9 +209,9 @@
   .preview__form {
     position: relative;
     padding: 35px 52px 35px 0;
-    justify-content: space-between;
     align-items: center;
     border-radius: 0;
+    background-color: #2c2c2e;
   }
 
   .preview__form::before {
@@ -199,17 +219,19 @@
 
     top: 0;
     left: -50px;
-    width: 50px;
+    width: 51px;
     height: 100%;
-    background-color: #444444;
+    background-color: #2c2c2e;
   }
 
   .preview__form-text {
-    width: 35%;
     margin-bottom: 0;
+    margin-right: 45px;
+    width: 35%;
   }
 
   .preview__form-input {
+    margin-right: 30px;
     width: 30%;
   }
 
@@ -221,11 +243,18 @@
 
   .preview__form-placeholder {
     top: 50px;
-    left: 282px;
+    left: 295px;
   }
 
   .preview__personal-account {
     margin-bottom: auto;
+    margin-right: 50px;
+  }
+
+  .preview__count-wrapper {
+    display: block;
+    right: 30px;
+    bottom: 300px;
   }
 }
 
@@ -241,7 +270,9 @@
   }
 
   .preview__text {
+    margin-bottom: 196px;
     padding-right: 800px;
+    margin-right: 55px;
   }
 
   .preview__form {
@@ -253,10 +284,14 @@
   }
 
   .preview__form-placeholder {
-    left: 420px;
+    left: 440px;
   }
 
   .preview__personal-account {
     margin-right: 65px;
+  }
+
+  .preview__count-wrapper {
+    right: 60px;
   }
 }

@@ -193,6 +193,126 @@
   display: none;
 }
 
+.services__modal {
+  display: none;
+  position: absolute;
+  left: -25px;
+  top: -112px;
+  padding: 70px 20px 30px 20px;
+  width: 335px;
+  background-color: rgba(34, 34, 34, 0.7);
+  z-index: 100;
+}
+
+.services__modal--show {
+  display: block;
+}
+
+.services__modal-title {
+  position: relative;
+  margin: 0;
+  margin-bottom: 50px;
+  font-weight: 300;
+  font-size: 32px;
+  line-height: 42px;
+  color: $white;
+}
+
+.services__modal-title::before {
+  @include pseudo;
+
+  width: 100%;
+  height: 3px;
+  bottom: -20px;
+  left: 0;
+  background-color: $white;
+}
+
+.services__modal-text {
+  margin: 0;
+  margin-bottom: 70px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.services__modal-link {
+  display: block;
+  position: relative;
+  width: 100%;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 31px;
+  letter-spacing: 0.05em;
+  color: $white;
+}
+
+.services__modal-link::before {
+  @include pseudo;
+  bottom: 13px;
+  right: 30px;
+  width: 81px;
+  height: 1px;
+  background-color: $white;
+}
+
+.services__modal-link::after {
+  @include pseudo;
+  bottom: 9px;
+  right: 31px;
+  width: 8px;
+  height: 8px;
+  border: 1px solid $white;
+  transform: rotate(45deg);
+  border-bottom: none;
+  border-left: none;
+}
+
+.services__modal-close-btn {
+  padding: 0;
+  display: block;
+  position: absolute;
+  border-radius: 50%;
+  top: 37px;
+  right: 27px;
+  width: 40px;
+  height: 40px;
+  font-size: 0;
+  background: none;
+  border: 1px solid $white;
+  cursor: pointer;
+  outline: none;
+
+  &::before {
+    @include pseudo;
+    top: 13px;
+    left: 5px;
+    width: 11px;
+    height: 11px;
+    border: 2px solid $white;
+    border-left: none;
+    border-bottom: none;
+    transform: rotate(45deg);
+  }
+
+  &::after {
+    @include pseudo;
+    top: 13px;
+    right: 5px;
+    width: 11px;
+    height: 11px;
+    border: 2px solid $white;
+    border-right: none;
+    border-top: none;
+    transform: rotate(45deg);
+  }
+}
+
+.services__count-wrapper {
+  display: none;
+}
+
 @media (min-width: 768px) {
   .services__item--active .services__video-play-btn {
     padding-top: 13px;
@@ -202,6 +322,64 @@
   .services__nav-wrapper {
     width: 90px;
     z-index: 50;
+  }
+
+  .services__modal {
+    left: -50px;
+    top: -112px;
+    padding: 80px 80px 58px 46px;
+    width: 642px;
+  }
+
+  .services__modal-title {
+    margin-bottom: 60px;
+    padding-right: 500px;
+  }
+
+  .services__modal-title::before {
+    @include pseudo;
+
+    width: 265px;
+    height: 3px;
+    bottom: -20px;
+    left: 0;
+    background-color: $white;
+  }
+
+  .services__modal-text {
+    margin-bottom: 70px;
+  }
+
+  .services__modal-link {
+    display: block;
+    position: relative;
+    width: 100%;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 31px;
+    letter-spacing: 0.05em;
+    color: $white;
+  }
+
+  .services__modal-link::before {
+    @include pseudo;
+    bottom: 13px;
+    right: 30px;
+    width: 81px;
+    height: 1px;
+    background-color: $white;
+  }
+
+  .services__modal-link::after {
+    @include pseudo;
+    bottom: 9px;
+    right: 31px;
+    width: 8px;
+    height: 8px;
+    border: 1px solid $white;
+    transform: rotate(45deg);
+    border-bottom: none;
+    border-left: none;
   }
 }
 
@@ -252,8 +430,21 @@
     width: 100%;
   }
 
+  .glide__slides {
+    width: 100%;
+    max-width: 1440px;
+    min-height: 621px;
+  }
+
+  .glide__track {
+    width: 100%;
+    max-width: 1440px;
+    min-height: 621px;
+  }
+
   .services__item {
     margin-top: auto;
+    margin-right: 58px;
     position: relative;
     display: none;
     flex-direction: column;
@@ -316,7 +507,6 @@
   .services__list {
     position: relative;
     display: flex;
-    justify-content: space-between;
     align-items: flex-end;
     width: 100%;
     min-height: 621px;
@@ -368,7 +558,7 @@
     order: 1;
     position: absolute;
     top: 0;
-    width: 60%;
+    width: 50%;
     height: 80px;
     margin-bottom: 20px;
     overflow: hidden;
@@ -387,7 +577,7 @@
     position: absolute;
     top: 85px;
     display: block;
-    width: 60%;
+    width: 50%;
     height: 30px;
     margin-bottom: 20px;
     overflow: hidden;
@@ -398,7 +588,7 @@
     position: absolute;
     top: 155px;
     display: block;
-    width: 60%;
+    width: 50%;
     height: 120px;
     margin-bottom: 50px;
     padding-left: 19px;
@@ -410,7 +600,7 @@
     position: absolute;
     top: 300px;
     display: block;
-    width: 60%;
+    width: 50%;
     text-align: center;
     margin-bottom: 30px;
     margin-left: 19px;
@@ -422,7 +612,7 @@
     top: 370px;
     padding-left: 5px;
     padding-right: 5px;
-    width: 60%;
+    width: 50%;
     text-align: center;
     margin-left: 19px;
   }
@@ -439,12 +629,16 @@
     left: 30px;
   }
 
-  .services__item--active .services__nav-wrapper {
+  .services__nav-wrapper {
     display: flex;
     top: 750px;
-    right: 135px;
+    right: 205px;
     width: 150px;
     justify-content: space-between;
+  }
+
+  .services__item--active .services__btn-more {
+    display: inline-block;
   }
 
   .services__nav-button {
@@ -457,6 +651,7 @@
     font-size: 0;
     cursor: pointer;
     background-color: transparent;
+    outline: none;
 
     &:hover,
     &:focus {
@@ -493,10 +688,35 @@
     border-bottom: none;
     border-left: none;
   }
+
+
+  .services__modal {
+    padding: 127px 80px 80px 46px;
+    min-height: 826px;
+    width: 532px;
+    top: -130px;
+    right: 0;
+    left: initial;
+    animation: fadeIn 0.4s ease;
+  }
+
+  .services__modal-close-btn::before {
+    left: 6px;
+  }
+
+  .services__modal-close-btn::after {
+    right: 6px;
+  }
+
+  .services__count-wrapper {
+    display: block;
+    right: 30px;
+    bottom: 300px;
+  }
 }
 
 @media (min-width: 1440px) {
-  .services__item--active .services__item {
+  .services__item--active {
     padding-left: 320px;
   }
 
@@ -516,5 +736,10 @@
 
   .services__nav-wrapper {
     top: 690px;
+    right: 355px;
+  }
+
+  .services__count-wrapper {
+    right: 60px;
   }
 }

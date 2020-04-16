@@ -100,6 +100,7 @@
   line-height: 28px;
   color: $white;
   text-align: center;
+  transition: 0.1s ease;
 
   &:hover,
   &:focus,
@@ -114,6 +115,10 @@
   margin-bottom: 24px;
   position: static;
   align-self: center;
+}
+
+.page-footer__count-wrapper {
+  display: none;
 }
 
 @media (min-width: 1150px) {
@@ -173,10 +178,26 @@
   .page-footer__download-link {
     margin-bottom: 0;
   }
+
+  .page-footer__count-wrapper {
+    display: block;
+    right: 30px;
+    bottom: 300px;
+  }
 }
 
 @media (min-width: 1440px) {
+  .page-footer__wrapper {
+    padding-top: 125px;
+    padding-right: 134px;
+    padding-left: 137px;
+  }
+
   .page-footer__social {
     left: 27px;
+  }
+
+  .page-footer__count-wrapper {
+    right: 60px;
   }
 }
