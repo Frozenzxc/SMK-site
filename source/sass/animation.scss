@@ -40,6 +40,23 @@
   }
 }
 
+@keyframes vision-bg-in {
+  0% {
+    width: 0;
+    visibility: hidden;
+  }
+
+  50% {
+    width: 0;
+    visibility: visible;
+  }
+
+  100% {
+    visibility: visible;
+    width: 309px;
+  }
+}
+
 /*@keyframes slide {
   100% {
     left: 0;
@@ -249,5 +266,91 @@
 @keyframes visionScale {
   100% {
     transform: scale(1.1);
+  }
+}
+
+@media (min-width: 1440px) {
+  .anim-active-out .services__item-title {
+    animation: slideInUp 1s ease;
+  }
+
+  .anim-active-out .services__item-text {
+    animation: slideInUp 1s ease;
+  }
+
+  .anim-active-out .services__item-name {
+    animation: slideInUp 1s ease;
+  }
+
+  .anim-active-out .services__feedback {
+    animation: fadeOut 1s linear;
+  }
+
+  .anim-active-out .services__link {
+    animation: fadeOut 1s linear;
+  }
+
+  .anim-active-out .services__video-play-btn {
+    animation: fadeOut 1s linear;
+  }
+
+  .anim-active-out .services__item-photo {
+    animation: imgMoveOut 1s ease-in;
+  }
+
+  .anim-active-in .services__item-title {
+    animation: slideOutDown 1s ease;
+  }
+
+  .anim-active-in .services__item-text {
+    animation: slideOutDown 1s ease;
+  }
+
+  .anim-active-in .services__item-name {
+    animation: slideOutDown 1s ease;
+  }
+
+  .anim-active-in .services__feedback {
+    animation: fadeIn 1s linear;
+  }
+
+  .anim-active-in .services__link {
+    animation: fadeIn 1s linear;
+  }
+
+  .anim-active-in .services__video-play-btn {
+    animation: fadeIn 1s linear;
+  }
+
+  .anim-next-in .services__item-title {
+    animation: fadeOut 1s ease-in;
+  }
+
+  .anim-next-in .services__item-name {
+    animation: fadeOut 1s ease-in;
+  }
+
+  .anim-next-in .services__item-photo {
+    animation: imgMoveIn 1s ease-in;
+  }
+
+  .anim-follow-in .services__item-title {
+    animation: fadeOut 1s ease-in;
+  }
+
+  .anim-follow-in .services__item-name {
+    animation: fadeOut 1s ease-in;
+  }
+
+  .anim-follow-in .services__item-photo {
+    animation: imgLongMoveIn 1s ease-in;
+  }
+
+  .anim-next-out {
+    animation: slideOut 1s ease-in;
+  }
+
+  .anim-follow-move {
+    animation: nextSlideMove 1s ease-in;
   }
 }

@@ -8,13 +8,12 @@
   line-height: 28px;
   font-weight: 400;
   color: $white;
+  letter-spacing: 0.05em;
   transition: 0.1s ease;
 
   &:hover,
   &:focus,
   &:active {
-    background: none;
-    background-color: $white;
-    color: $red;
+    opacity: 0.5;
   }
 }

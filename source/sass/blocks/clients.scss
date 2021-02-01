@@ -1,5 +1,5 @@
 .clients {
-  background-color: #2c2c2c;
+  background-color: #1c1c1c;
 }
 
 .clients__wrapper {
@@ -198,7 +198,8 @@
 .clients__nav-wrapper {
   position: absolute;
   bottom: 27px;
-  right: 71px;
+  right: 62px;
+  width: 144px;
 }
 
 .clients__modal {
@@ -209,6 +210,7 @@
   padding: 70px 20px 58px 20px;
   width: 375px;
   background-color: rgba(34, 34, 34, 0.7);
+  backdrop-filter: blur(2px);
   z-index: 100;
 }
 
@@ -321,12 +323,11 @@
     border-top: none;
     transform: rotate(45deg);
   }
-
-  .clients__additional-link {
-    display: none;
-  }
 }
 
+.clients__additional-link {
+  display: none;
+}
 
 @media (min-width: 768px) {
   .clients__wrapper {
@@ -391,10 +392,6 @@
 
   .clients__image {
     width: 100%;
-  }
-
-  .clients__nav-wrapper {
-    width: 150px;
   }
 
   .clients__modal {

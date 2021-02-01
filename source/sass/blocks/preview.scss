@@ -42,7 +42,8 @@
   width: 100%;
   padding: 25px 24px;
   border-radius: 10px;
-  background-color: #444444;
+  background-color: #1e1e1e;
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.75);
 }
 
 .preview__form-text {
@@ -51,6 +52,9 @@
   font-size: 20px;
   line-height: 28px;
   font-weight: 400;
+  text-align: center;
+  letter-spacing: 0.05em;
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .preview__form-input {
@@ -192,6 +196,16 @@
     border-top: none;
   }
 
+  .preview__wrapper::before {
+    @include pseudo;
+
+    top: -125px;
+    left: 79px;
+    width: 1px;
+    height: calc(100% + 125px);
+    background-color: rgba(255, 255, 255, 0.4);
+  }
+
   .preview__slogan {
     margin-bottom: 30px;
     padding-left: 100px;
@@ -212,6 +226,7 @@
     align-items: center;
     border-radius: 0;
     background-color: #2c2c2e;
+    box-shadow: none;
   }
 
   .preview__form::before {
