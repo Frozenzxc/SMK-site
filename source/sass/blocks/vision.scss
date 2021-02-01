@@ -318,7 +318,7 @@
   }
 
   #vision .vision__item--active {
-    height: 429px;
+    height: auto;
   }
 
   .vision__item--active {
@@ -328,7 +328,6 @@
     padding-left: 30px;
     flex-wrap: wrap;
     z-index: 5;
-    height: 429px;
     width: 338px;
     transition: 0.5s ease;
     background: linear-gradient(355.19deg, #f56e39 15.49%, #ff8761 75.81%);
@@ -439,7 +438,7 @@
   .vision__item--active .vision__desc {
     padding-top: 80px;
     width: 309px;
-    height: 429px;
+    height: calc(100% + 1px);
     top: -1px;
     transition: opacity 0.5s ease 0.6s;
     opacity: 1;
