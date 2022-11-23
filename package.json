@@ -11,7 +11,7 @@
     "@htmlacademy/editorconfig-cli": "^1.x",
     "autoprefixer": "^9.7.6",
     "babel-loader": "^8.1.0",
-    "browser-sync": "^2.26.x",
+    "browser-sync": "^2.27.x",
     "del": "^5.1.0",
     "eslint": "5.13.0",
     "eslint-config-htmlacademy": "0.5.2",
